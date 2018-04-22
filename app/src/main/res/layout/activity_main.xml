@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:text="enter message"/>
+
+
+    <Button
+        android:id="@+id/BtnLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickLoadPhoto"
+        android:text="Add Photo" />
+
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/image"
+        android:contentDescription="Image" />
+
+
+
+    <Button
+        android:id="@+id/saveAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveAll"
+        android:text="Save" />
+
+
+
+</LinearLayout>
