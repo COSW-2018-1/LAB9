@@ -21,12 +21,15 @@ public class MainActivity extends AppCompatActivity {
     EditText text;
     ImageView imageView;
     Button saveAll, loadImage, takePhoto;
+    Boolean imageLoad;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        imageLoad = false;
+
 
         text = findViewById(R.id.editText);
         imageView = findViewById(R.id.imageView);
@@ -70,10 +73,11 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+
     public void saveAll(View view) {
 
 
-        if(text.getText().toString().equals("enter message") || text.getText().toString().equals("")){
+        if(text.getText().toString().equals("enter message") || text.getText().toString().equals("") || !imageLoad){
             Toast toast1 = Toast.makeText(getApplicationContext(), "Please enter either a message or select an image ", Toast.LENGTH_LONG);
             toast1.setGravity(Gravity.CENTER,0 ,0 );
             toast1.show();
@@ -134,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Dispatch incoming result to the correct fragment.
+     * Dispatch incoming result to the correct fragment.  Para saber si se selecciono la imagen
      *
      * @param requestCode
      * @param resultCode
@@ -145,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(resultCode== RESULT_OK){
+            imageLoad = true;
             Uri path = data.getData();
             imageView.setImageURI(path);
 
