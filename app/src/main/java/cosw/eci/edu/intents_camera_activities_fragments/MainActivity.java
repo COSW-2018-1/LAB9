@@ -13,15 +13,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import cosw.eci.edu.intents_camera_activities_fragments.Pojos.Post;
+
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "MainActivity";
 
     EditText text;
     ImageView imageView;
     Button saveAll, loadImage, takePhoto;
     Boolean imageLoad;
+    Post post;
+    Uri loadUri;
 
 
     @Override
@@ -92,7 +97,43 @@ public class MainActivity extends AppCompatActivity {
            }
            else{
 
-               AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                /*
+               Intent intent = new Intent(this, PostActivity.class);
+               EditText editText = findViewById(R.id.editText);
+               String message = editText.getText().toString();
+               intent.putExtra(EXTRA_MESSAGE, message);
+               startActivity(intent);
+               */
+
+
+               // CREAR EL OBJETO PARA QUE EN EL POSTACTIVITY SE MUESTRE EL MENSAJE Y LA IMAGEN(URI)
+               post = new Post();
+               post.setMessage(text.getText().toString());
+               post.setUriImage(loadUri);
+
+
+               Intent intent = new Intent(MainActivity.this, PostActivity.class);
+
+               intent.putExtra(EXTRA_MESSAGE, post);
+
+               //try
+               //{
+
+                   startActivity(intent);
+               //}
+               //catch (Exception e){
+                   System.out.println("====================================== Exception occurred");
+                   System.out.println("message: "+post.getMessage());
+                   System.out.println("Uri image: "+post.getUriImage().toString());
+               //}
+
+
+               // INTENT NORMAL
+               /*Intent intent = new Intent(this, PostActivity.class );
+               startActivity(intent);*/
+
+               // POR AHORA SALE DE LA APP
+               /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
                builder.setMessage("Desea salir de la aplicación?");
                builder.setTitle("Salir de App");
 
@@ -115,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
 
                AlertDialog dialog = builder.create();
                dialog.show();
+               */
 
            }
 
@@ -150,9 +192,11 @@ public class MainActivity extends AppCompatActivity {
 
         if(resultCode== RESULT_OK){
             imageLoad = true;
-            Uri path = data.getData();
-            imageView.setImageURI(path);
+            loadUri = data.getData();
+            imageView.setImageURI(loadUri);
 
         }
     }
+
+
 }
