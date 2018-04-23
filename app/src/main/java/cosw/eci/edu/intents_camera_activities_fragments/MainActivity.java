@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imageView;
     Button saveAll, loadImage, takePhoto;
     Boolean imageLoad;
-    Post post;
+    static Post post;
     Uri loadUri;
 
 
@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                */
 
 
+                /*
                // CREAR EL OBJETO PARA QUE EN EL POSTACTIVITY SE MUESTRE EL MENSAJE Y LA IMAGEN(URI)
                post = new Post();
                post.setMessage(text.getText().toString());
@@ -126,37 +127,16 @@ public class MainActivity extends AppCompatActivity {
                    System.out.println("message: "+post.getMessage());
                    System.out.println("Uri image: "+post.getUriImage().toString());
                //}
-
+               */
 
                // INTENT NORMAL
-               /*Intent intent = new Intent(this, PostActivity.class );
-               startActivity(intent);*/
+               // CREAR EL OBJETO PARA QUE EN EL POSTACTIVITY SE MUESTRE EL MENSAJE Y LA IMAGEN(URI)
+               post = new Post();
+               post.setMessage(text.getText().toString());
+               post.setUriImage(loadUri);
 
-               // POR AHORA SALE DE LA APP
-               /*AlertDialog.Builder builder = new AlertDialog.Builder(this);
-               builder.setMessage("Desea salir de la aplicación?");
-               builder.setTitle("Salir de App");
-
-
-               builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       finish();
-                   }
-               });
-
-
-               builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                   @Override
-                   public void onClick(DialogInterface dialog, int which) {
-                       dialog.cancel();
-                   }
-               });
-
-
-               AlertDialog dialog = builder.create();
-               dialog.show();
-               */
+               Intent intent = new Intent(MainActivity.this, PostActivity.class );
+               startActivity(intent);
 
            }
 
@@ -198,5 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+    public static Post getPost() {
+        return post;
+    }
 }
