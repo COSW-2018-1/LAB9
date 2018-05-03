@@ -12,10 +12,12 @@
         android:id="@+id/editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/edit_text_label"
         android:fontFamily="casual"
         android:inputType="text"
-        android:text="enter message"
-        android:textStyle="bold" />
+        android:text="@string/enter_message"
+        android:textStyle="bold"
+        tools:text="enter text" />
 
 
     <Button
@@ -23,16 +25,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="onClickLoadPhoto"
-        android:text="Add Photo" />
+        android:text="@string/add_photo" />
 
 
+    <fragment
+        android:id="@+id/fragment"
+        android:name="cosw.eci.edu.intents_camera_activities_fragments.NewPostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_new_post" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:src="@drawable/image"
-        android:contentDescription="Image" />
+        android:contentDescription="@string/image" />
 
 
     <Button
@@ -40,7 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="saveAll"
-        android:text="Save" />
+        android:text="@string/save" />
 
 
 
