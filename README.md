@@ -24,7 +24,7 @@ Create a form that captures a text field and a picture. The picture could be cap
 
 Once the user selects an image it should be displayed in the form (as shown on the screenshot as the Android icon).
 
-![Alt text](https://github.com/COSW-ECI/android-intents-camera/blob/master/form.png)
+![Alt text](form.png)
 
 #### Form Validation Criteria:
 
@@ -80,3 +80,10 @@ https://developer.android.com/training/basics/firstapp/starting-activity.html
  5) Modify the MainActivity so when you click on save you show the *PostFragment* 
  
  6) Verify that the App works as before when you had only activities.
+---
+
+# Resultado
+
+![Alt text](s1.png)
+---
+![Alt text](s2.png)
