@@ -28,7 +28,6 @@
             android:id="@+id/BtnLoad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onClickLoadPhoto"
             android:text="@string/add_photo_frag" />
 
         <ImageView
@@ -43,7 +42,6 @@
             android:id="@+id/saveAll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="saveAll"
             android:text="@string/save" />
 
     </LinearLayout>

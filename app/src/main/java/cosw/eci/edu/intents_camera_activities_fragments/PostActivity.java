@@ -27,7 +27,7 @@ public class PostActivity extends AppCompatActivity {
 
         //textView.setText(message);
 
-        post = MainActivity.getPost();
+        post = NewPostFragment.getPost();
 
         textView.setText(post.getMessage());
         imageView.setImageURI(post.getUriImage());

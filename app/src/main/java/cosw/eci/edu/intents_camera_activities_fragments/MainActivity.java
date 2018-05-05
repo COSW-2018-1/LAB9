@@ -2,11 +2,13 @@ package cosw.eci.edu.intents_camera_activities_fragments;
 
 
 import android.app.AlertDialog;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        /*
+
         imageLoad = false;
 
 
@@ -40,9 +44,24 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         saveAll = findViewById(R.id.saveAll);
         loadImage = findViewById(R.id.BtnLoad);
+        */
     }
 
 
+    /*
+    public void showFragment(Fragment fragment, boolean addToBackStack)
+    {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        String tag = fragment.getClass().getSimpleName();
+        if ( addToBackStack )
+        {
+            transaction.addToBackStack( tag );
+        }
+        transaction.replace( R.id.fragment_container, fragment, tag );
+        transaction.commitAllowingStateLoss();
+    }*/
 
 
 
@@ -78,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
-
+    /*
     public void saveAll(View view) {
 
 
@@ -97,16 +116,16 @@ public class MainActivity extends AppCompatActivity {
            }
            else{
 
-                /*
+               ///comentar
                Intent intent = new Intent(this, PostActivity.class);
                EditText editText = findViewById(R.id.editText);
                String message = editText.getText().toString();
                intent.putExtra(EXTRA_MESSAGE, message);
                startActivity(intent);
-               */
+               // -- aca
 
 
-                /*
+                ///-- comentar
                // CREAR EL OBJETO PARA QUE EN EL POSTACTIVITY SE MUESTRE EL MENSAJE Y LA IMAGEN(URI)
                post = new Post();
                post.setMessage(text.getText().toString());
@@ -127,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
                    System.out.println("message: "+post.getMessage());
                    System.out.println("Uri image: "+post.getUriImage().toString());
                //}
-               */
+               //-- aca
 
                // INTENT NORMAL
                // CREAR EL OBJETO PARA QUE EN EL POSTACTIVITY SE MUESTRE EL MENSAJE Y LA IMAGEN(URI)
@@ -145,25 +164,26 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    }
+    }*/
+
 
 
     /**
      * Mirar el NewPostFragmente
      * @param view
-     */
+     */ /*
     public void onClickLoadPhoto(View view) {
         cargarImagen();
-    }
+    }*/
 
     /**
      * Mirar el NewPostFragmente
-     */
+     *//*
     private void cargarImagen() {
         Intent intent=new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.setType("image/");
         startActivityForResult(intent.createChooser(intent,"Seleccione la Aplicación"),10);
-    }
+    }*/
 
     /**
      * Dispatch incoming result to the correct fragment.  Para saber si se selecciono la imagen
@@ -172,6 +192,7 @@ public class MainActivity extends AppCompatActivity {
      * @param resultCode
      * @param data
      */
+    /*
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -182,9 +203,8 @@ public class MainActivity extends AppCompatActivity {
             imageView.setImageURI(loadUri);
 
         }
-    }
+    }*/
 
-    public static Post getPost() {
-        return post;
-    }
+
+
 }
