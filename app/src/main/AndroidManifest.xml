@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PostActivity"
+        <activity
+            android:name=".PostActivity"
             android:parentActivityName=".MainActivity" >
             <!-- The meta-data tag is required if you support API level 15 and lower -->
             <meta-data

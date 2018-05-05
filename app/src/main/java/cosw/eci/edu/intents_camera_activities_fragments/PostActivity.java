@@ -10,14 +10,18 @@ import cosw.eci.edu.intents_camera_activities_fragments.Pojos.Post;
 
 public class PostActivity extends AppCompatActivity {
 
+    /*
     TextView textView;
     ImageView imageView;
     Post post;
+    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+
+        /*
         textView = findViewById(R.id.textView);
         imageView = findViewById(R.id.imageView);
 
@@ -31,7 +35,7 @@ public class PostActivity extends AppCompatActivity {
 
         textView.setText(post.getMessage());
         imageView.setImageURI(post.getUriImage());
-
+        */
 
         /*
         // Get the Intent that started this activity and extract the string

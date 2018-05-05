@@ -8,7 +8,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.app.Fragment;
+//import android.app.Fragment;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
@@ -48,7 +51,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+
     /*
+    SE PUEDE QUITAR Y SE CAMBIA EL IMPORT POR:
+    mport android.app.Fragment;
+     */
+
+
     public void showFragment(Fragment fragment, boolean addToBackStack)
     {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -61,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         }
         transaction.replace( R.id.fragment_container, fragment, tag );
         transaction.commitAllowingStateLoss();
-    }*/
+    }
 
 
 
